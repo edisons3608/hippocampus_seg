@@ -40,7 +40,12 @@ for filename in sorted(os.listdir(training_data_directory_img)):
         image_path = os.path.join(training_data_directory_img, filename)
         img = nib.load(image_path).get_fdata()
 
-
+        slice_idx = img.shape[1] // 2
+        #plt.subplot(1, 3, 1)
+        #plt.imshow(img[:, slice_idx, :], cmap='gray')
+        #plt.title('Image (Mid-Coronal Slice)')
+        #plt.axis('off')
+        #plt.show()
         img_tensor = torch.tensor(img, dtype=torch.float32)
         training_images.append(img_tensor)
     # if filename ends with CTM, convert nifti to torch tensor and append to masks list
@@ -195,34 +200,6 @@ class DoubleConv3D(nn.Module):
     def forward(self, x):
         return self.double_conv(x)
     
-class LearnableBCEDiceLoss(nn.Module):
-    def __init__(self):
-        super(LearnableBCEDiceLoss, self).__init__()
-        # Initialize the learnable weight parameter (starting with equal weighting)
-        self.bce_weight = nn.Parameter(torch.tensor(0.5))  # Initial value of 0.5
-
-        # BCE loss definition
-        self.bce_loss = nn.BCELoss()
-
-    def forward(self, pred, target):
-        # Clamp the learnable weight to ensure it stays within [0, 1]
-        bce_weight = torch.sigmoid(self.bce_weight)
-        
-        # Binary Cross-Entropy Loss
-        bce = self.bce_loss(pred, target)
-        
-        # Dice Loss
-        dice = dice_loss(pred, target)
-        
-        # Combined loss with learnable weight
-        return bce_weight * bce + (1 - bce_weight) * dice
-
-def dice_loss(pred, target, smooth=1e-6):
-    pred = pred.contiguous().view(-1)
-    target = target.contiguous().view(-1)
-    intersection = (pred * target).sum()
-    dice = (2. * intersection + smooth) / (pred.sum() + target.sum() + smooth)
-    return 1 - dice
 
 # define model
 model = UNet3D(in_channels=1, out_channels=3)
