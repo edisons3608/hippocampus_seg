@@ -2,7 +2,23 @@
 
 ## Overview
 
-This project implements a 3D U-Net for hippocampus segmentation from T1-weighted MRI scans. The model segments the hippocampus into anterior (head) and posterior (body + tail) regions, based on the Medical Decathlon challenge dataset. 
+This project implements a 3D U-Net for hippocampus segmentation from T1-weighted MRI scans. The model segments the hippocampus into anterior (head) and posterior (body + tail) regions, based on the Medical Decathlon challenge dataset.
+
+## Preview
+
+Mid-coronal slices showing hippocampus segmentation results:
+
+<div align="center">
+  <img src="assets/p1.png" width="30%" alt="Hippocampus Segmentation 1">
+  <img src="assets/p2.png" width="30%" alt="Hippocampus Segmentation 2">
+  <img src="assets/p3.png" width="30%" alt="Hippocampus Segmentation 3">
+</div>
+
+Sample mask visualization:
+
+<div align="center">
+  <img src="assets/slicer_pre.png" width="50%" alt="Sample Mask Visualization">
+</div> 
 
 ## Reference
 
@@ -104,19 +120,19 @@ Based on the provided results, the model achieved the following performance metr
 ### Dice Scores (Percentiles: 25th, 50th, 75th)
 
 **Class 0 (Background):**
-- 25th percentile: 0.992
-- 50th percentile: 0.992  
-- 75th percentile: 0.993
+- 25th percentile: 0.994
+- 50th percentile: 0.994  
+- 75th percentile: 0.995
 
 **Class 1 (Hippocampus Anterior - Head):**
-- 25th percentile: 0.840
-- 50th percentile: 0.872
-- 75th percentile: 0.896
+- 25th percentile: 0.863
+- 50th percentile: 0.891
+- 75th percentile: 0.901
 
 **Class 2 (Hippocampus Posterior - Body + Tail):**
-- 25th percentile: 0.827
-- 50th percentile: 0.841
-- 75th percentile: 0.861
+- 25th percentile: 0.843
+- 50th percentile: 0.857
+- 75th percentile: 0.881
 
 
 The posterior hippocampus scores slightly lower, likely due to its smaller size and more complex shape.

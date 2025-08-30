@@ -266,7 +266,7 @@ class DoubleConv3D(nn.Module):
     def forward(self, x):
         return self.double_conv(x)
     
-loaded_model = torch.load('classic_08_30_2025_13_25_37.pth', map_location=torch.device('cpu'),weights_only=False)
+loaded_model = torch.load('models/classic_08_30_2025_13_25_37.pth', map_location=torch.device('cpu'),weights_only=False)
 
 dice_scores = []
 num_classes = 3  # adjust if needed
