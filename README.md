@@ -161,3 +161,7 @@ opencv-python
 ## Model Files
 
 The trained models are saved with timestamps in the `models/` directory.
+
+## Acknowledgments
+
+This research was supported in part through the computational resources and staff contributions provided for the Quest high performance computing facility at Northwestern University which is jointly supported by the Office of the Provost, the Office for Research, and Northwestern University Information Technology. The models were trained using Quest's Tesla A100 SXM compute nodes.
