@@ -75,7 +75,7 @@ The model implements a 3D variant of the U-Net architecture with the following s
 
 ## Dataset
 
-260 T1-weighted MRI scans from Vanderbilt University Medical Center. Split 7:2:1 for training/validation/testing.
+260 T1-weighted MRI scans from Vanderbilt University Medical Center, provided by the [Medical Decathlon](http://medicaldecathlon.com/) challenge. Split 7:2:1 for training/validation/testing.
 
 ```
 hippo/
