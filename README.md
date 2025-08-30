@@ -24,12 +24,11 @@ Sample mask visualization:
 
 This implementation is based on the following research paper:
 
-**U-Net: Convolutional Networks for Biomedical Image Segmentation**
+**A Large Annotated Medical Image Dataset for the Development and Evaluation of Segmentation Algorithms**
 
-- **Authors**: Olaf Ronneberger, Philipp Fischer, Thomas Brox
-- **Conference**: Medical Image Computing and Computer-Assisted Intervention (MICCAI) 2015
-- **DOI**: 10.1007/978-3-319-24574-4_28
-- **arXiv**: [1505.04597](https://arxiv.org/abs/1505.04597)
+- **Authors**: Amber L. Simpson, Michela Antonelli, Spyridon Bakas, Michel Bilello, Keyvan Farahani, Bram van Ginneken, Annette Kopp-Schneider, Bennett A. Landman, Geert Litjens, Bjoern Menze, Olaf Ronneberger, Ronald M. Summers, Patrick Bilic, Patrick F. Christ, Richard K. G. Do, Marc Gollub, Jennifer Golia-Pernicka, Stephan H. Heckers, William R. Jarnagin, Maureen K. McHugo, Sandy Napel, Eugene Vorontsov, Lena Maier-Hein, M. Jorge Cardoso
+- **Year**: 2019
+- **arXiv**: [1902.09063](https://arxiv.org/abs/1902.09063)
 
 ## Model Architecture
 
